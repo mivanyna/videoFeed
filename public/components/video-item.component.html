@@ -1,0 +1,13 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <span ng-bind="$ctrl.video.title || 'No caption'"></span> <span ng-if="$ctrl.video.views" class="pull-right">{{$ctrl.video.views | thousandSuffix: 1}} views</span>
+  </div>
+  <div class="panel-body">
+    <div class="embed-responsive embed-responsive-16by9" ng-if="!$ctrl.video.error">
+      <iframe src="{{$ctrl.video.src}}" class="embed-responsive-item"></iframe>
+    </div>
+    <div ng-if="$ctrl.video.error" class="text-center">
+      <span class="text-danger" ng-bind="$ctrl.video.error"></span>
+    </div>
+  </div>
+</div>
